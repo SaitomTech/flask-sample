@@ -1,0 +1,14 @@
+version: "3"
+services:
+  xxxx:
+    build:
+      context: .
+      dockerfile: .devcontainer/Dockerfile
+      args:
+        WORKDIR: /xxxx
+    volumes:
+      - .:/xxxx
+    image: xxxx-image
+    container_name: xxxx-container
+    tty: true
+    env_file: .env
