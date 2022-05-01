@@ -1,3 +1,4 @@
+from crypt import methods
 from flask import Flask
 
 app = Flask(__name__)
@@ -9,7 +10,7 @@ def index():
     return "This is a first page."
 
 
-@app.route("/hello")
-def hello():
+@app.route("/hello/<name>", methods=["GET", "POST"], endpoint="hello-endpoint")
+def hello(name):
     """hello."""
-    return "hello, world"
+    return f"hello, {name}"
