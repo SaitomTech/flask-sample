@@ -6,4 +6,10 @@ app = Flask(__name__)
 @app.route("/")
 def index():
     """URLと実行する関数のマッピング."""
-    return "Hello, World!"
+    return "This is a first page."
+
+
+@app.route("/hello")
+def hello():
+    """hello."""
+    return "hello, world"
