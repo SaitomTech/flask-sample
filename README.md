@@ -3,3 +3,4 @@
 - `.env` に以下を記載
   - FLASK_APP=app.py
   - FLASK_ENV=development
+- ↑で`app.py`を指定しているので、`$ cd <app.pyがあるディレクトリ>`後に`$ flask run`
