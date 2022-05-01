@@ -1,5 +1,4 @@
-from crypt import methods
-from flask import Flask
+from flask import Flask, render_template
 
 app = Flask(__name__)
 
@@ -14,3 +13,9 @@ def index():
 def hello(name):
     """hello."""
     return f"hello, {name}"
+
+
+@app.route("/name/<name>")
+def show_name(name):
+    """Render sample."""
+    return render_template("index.html", name=name)
