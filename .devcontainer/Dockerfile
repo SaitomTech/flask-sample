@@ -1,6 +1,6 @@
 FROM python:3.10.4
 
-ARG WORKDIR=/xxxx
+ARG WORKDIR=/flask-sample
 WORKDIR ${WORKDIR}
 
 # Avoid errors in apt install caused by launching dialog box (! This configuration is restored in the end of Dockerfile)

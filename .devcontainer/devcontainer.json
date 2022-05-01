@@ -1,12 +1,12 @@
 // ref. https://github.com/Microsoft/vscode-remote-try-python
 // ref. https://code.visualstudio.com/docs/remote/create-dev-container
 {
-  "name": "[Optional] project name here",
+  "name": "flask-sample",
   "dockerComposeFile": [
     "../docker-compose.yml"
   ],
-  "service": "xxxx",
-  "workspaceFolder": "/xxxx",
+  "service": "flask-sample",
+  "workspaceFolder": "/flask-sample",
   "postCreateCommand": "pip install -r requirements.txt -r requirements-dev.txt",
   "shutdownAction": "stopCompose",
   "remoteUser": "developer",

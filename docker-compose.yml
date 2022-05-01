@@ -1,14 +1,14 @@
 version: "3"
 services:
-  xxxx:
+  flask-sample:
     build:
       context: .
       dockerfile: .devcontainer/Dockerfile
       args:
-        WORKDIR: /xxxx
+        WORKDIR: /flask-sample
     volumes:
-      - .:/xxxx
-    image: xxxx-image
-    container_name: xxxx-container
+      - .:/flask-sample
+    image: flask-sample-image
+    container_name: flask-sample-container
     tty: true
     env_file: .env
