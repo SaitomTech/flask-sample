@@ -42,6 +42,10 @@ def contact():
 def contact_complete():
     """contact completed."""
     if request.method == "POST":
+        username = request.form["username"]
+        email = request.form["email"]
+        description = request.form["description"]
+
         # メール送信
 
         # contactエンドポイントにリダイレクト
