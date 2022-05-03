@@ -1,6 +1,7 @@
-from flask import Flask, render_template, url_for, request, redirect
-
+from flask import Flask, render_template, url_for, request, redirect, flash
+from email_validator import validate_email, EmailNotValidError
 app = Flask(__name__)
+app.config["SECRET_KEY"] = "aiueo12345ABC"
 
 
 @app.route("/")
@@ -46,8 +47,32 @@ def contact_complete():
         email = request.form["email"]
         description = request.form["description"]
 
+        # validation
+        is_valid = True
+        if not username:
+            flash("ユーザ名は必須です")
+            is_valid = False
+
+        if not email:
+            flash("メールアドレスは必須です")
+            is_valid = False
+
+        try:
+            validate_email(email)
+        except EmailNotValidError:
+            flash("メールアドレスの形式が不正です")
+            is_valid = False
+
+        if not description:
+            flash("問い合わせ内容は必須です")
+            is_valid = False
+
+        if not is_valid:
+            return redirect(url_for("contact"))
+
         # メール送信
 
         # contactエンドポイントにリダイレクト
+        flash("お問い合わせありがとうございました")
         return redirect(url_for("contact_complete"))
     return render_template("contact_complete.html")
