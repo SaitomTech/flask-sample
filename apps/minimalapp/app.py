@@ -1,5 +1,6 @@
 from flask import Flask, render_template, url_for, request, redirect, flash
 from email_validator import validate_email, EmailNotValidError
+
 app = Flask(__name__)
 app.config["SECRET_KEY"] = "aiueo12345ABC"
 
@@ -41,7 +42,7 @@ def contact():
 
 @app.route("/contact/complete", methods=["GET", "POST"])
 def contact_complete():
-    """contact completed."""
+    """Contact completed."""
     if request.method == "POST":
         username = request.form["username"]
         email = request.form["email"]
