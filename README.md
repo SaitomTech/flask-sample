@@ -7,3 +7,6 @@
 
 ## その他
 - `flask routes`: ルーティング情報の確認
+
+## 書籍
+- https://github.com/ml-flaskbook/flaskbook
